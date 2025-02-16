@@ -2,3 +2,4 @@
 /.venv
 /A2-prediction.ipynb
 /mlruns
+/mlartifacts
