@@ -1,0 +1,17 @@
+services:
+  car-price-predictor:
+    image: nehastha/ml-car-price:latest
+    container_name: car-price-predictor
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    ports:
+      - "9001:80"
+    volumes:
+      - ./app:/root/app
+      - ./.vscode-server:/root/.vscode-server
+    environment:
+      - HOST=0.0.0.0
+      - PORT=80
+    command: python /root/app/app.py
