@@ -3,3 +3,4 @@
 /A2-prediction.ipynb
 /mlruns
 /mlartifacts
+app/__pycache__
