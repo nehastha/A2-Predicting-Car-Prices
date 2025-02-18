@@ -15,7 +15,7 @@ app.layout = html.Div(
     id='form-container',
     style={'fontFamily': "Arial", 
         'margin': 'auto',
-        'width': '80%',
+        'width': '50%',
         'padding': '20px',
         'border': '2px solid #f0f0f0',
         'border-radius': '10px',
@@ -23,35 +23,23 @@ app.layout = html.Div(
         'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.1)'
         },
     children=[
-        html.H1('Car Price Prediction', style={"textAlign": "center", "color": "#007ACC"}),
-        html.H3('Instructions:', style={'color': '#555',}),
-        html.P('1) In order to predict the car price, please enter the values for Engine, Mileage, Km_driven and Year in the respectively.',
+        html.H1('Car Price Prediction', style={"textAlign": "center"}),
+        html.P('Instructions: Please enter the values for Year, Engine, Km_driven and Mileage in the respective fields. '
+               'The prediction model will use these inputs to estimate the car price. To see the predicted value proceed by clicking the "Submit" button.'
+               ' For the fields that are empty default values will be used to predict the car price',
                style={
-                   'font-size': '16px',
-                   'color': '#555',
-                   'line-height': '1',
-                   
-        }),
-        html.P('2) The prediction model will use these inputs to estimate the car price and if you do not know the max_power and mileage then it will take the default values.',
-                   style={
-                   'font-size': '16px',
-                   'color': '#555',
-                   'line-height': '1'
-        }),
-        html.P('3) Finally, click "Submit" button to view the predicted car price.',
-                   style={
-                   'font-size': '16px',
+                   'font-size': '14px',
                    'color': '#555',
                    'margin-bottom': '30px',
-                   'line-height': '1'
-        }),
-        html.Label('Insert the values to see the result.', style={'font-weight': 'bold', 'font-size': '18px'}),
+                   'line-height': '1.5'
+               }),
+        html.Label('Enter the values in the respective field', style={'font-weight': 'bold', 'font-size': '16px'}),
         html.Br(),
         html.Br(),
         html.Label('Engine (CC):', style={'font-weight': 'bold', 'font-size': '15px'}),
         html.Br(),
         dcc.Input(id='engine', type='number', placeholder='Input the value of Engine', style={
-            'width': '60%',
+            'width': '100%',
             'padding': '8px',
             'margin-top': '5px',
             'margin-bottom': '20px',
@@ -64,7 +52,7 @@ app.layout = html.Div(
         html.Label('Mileage (kmpl):', style={'font-weight': 'bold', 'font-size': '15px'}),
         html.Br(),
         dcc.Input(id='mileage', type='number', placeholder='Input the value of Mileage', style={
-            'width': '60%',
+            'width': '100%',
             'padding': '8px',
             'margin-top': '5px',
             'margin-bottom': '20px',
@@ -77,7 +65,7 @@ app.layout = html.Div(
         html.Label('Km_driven:', style={'font-weight': 'bold', 'font-size': '15px'}),
         html.Br(),
         dcc.Input(id='km_driven', type='number', placeholder='Input the value of Km_driven', style={
-            'width': '60%',
+            'width': '100%',
             'padding': '8px',
             'margin-top': '5px',
             'margin-bottom': '20px',
@@ -90,7 +78,7 @@ app.layout = html.Div(
         html.Label('Year', style={'font-weight': 'bold', 'font-size': '15px'}),
         html.Br(),
         dcc.Input(id='year', type='number', placeholder='Input Year', style={
-            'width': '60%',
+            'width': '100%',
             'padding': '8px',
             'margin-top': '5px',
             'margin-bottom': '20px',
@@ -102,11 +90,11 @@ app.layout = html.Div(
         html.Br(),
         html.Br(),
         html.Button('Submit', id='submit', n_clicks=0, style={
-            'background-color': '#007bff',
+            'background-color': '#87B992',
             'color': 'white',
             'padding': '10px 15px',
             'border': 'none',
-            'border-radius': '5px',
+            'border-radius': '100px',
             'cursor': 'pointer',
             'font-size': '16px',
             'display': 'block',
