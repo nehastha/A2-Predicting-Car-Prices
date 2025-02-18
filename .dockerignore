@@ -1,0 +1,4 @@
+.venv/
+.vsocode-server/
+mlartifacts/
+mlruns/

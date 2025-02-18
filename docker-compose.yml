@@ -14,4 +14,3 @@ services:
     environment:
       - HOST=0.0.0.0
       - PORT=80
-    command: python /root/app/app.py
